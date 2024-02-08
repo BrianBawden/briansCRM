@@ -9,9 +9,9 @@ router.get("/:id", dbControllers.getById)
 
 router.post("/", dbControllers.insertOne)
 
-router.put("/", dbControllers.updateOne)
+router.put("/:id", dbControllers.updateOne)
 
-router.delete("/", dbControllers.deleteOne)
+router.delete("/:id", dbControllers.deleteOne)
 
 
 module.exports = router

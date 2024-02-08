@@ -1,8 +1,23 @@
+const express = require("express");
+const mongodb = require("../db/connect");
+const ObjectId = require("mongodb").ObjectId;
+const dbName = "briansCRM";
+const dbCollection = "customers";
 
-
-const getAll = () => {
-  console.log("Get everything.")
-}
+const getAll = async (req, res) => {
+  try {
+    const result = await mongodb
+      .getDb()
+      .db(dbName)
+      .collection(dbCollection)
+      .find();
+    result.toArray().then((lists) => {
+      res.json(lists);
+    });
+  } catch (err) {
+    return res.status(400).send("request failed: " + err);
+  }
+};
 
 const getById = () => {
   console.log("Get one.")

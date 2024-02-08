@@ -20,7 +20,7 @@ app
 
   mongodb.initDb((err, mongodb) =>{
     if(err) {
-      console.log(`Error init DB: ${err}`)
+      console.log(`Error init DB in app: ${err}`)
     } else {
       app.listen(port)
       console.log(`DB connected at ${port}`)
