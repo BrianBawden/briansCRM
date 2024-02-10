@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "nodemon app.js",
-    "start": "npm run app.js"
+    "start": "node app.js",
+    "swagger": "node ./swagger.js"
   },
   "keywords": [],
   "author": "",
