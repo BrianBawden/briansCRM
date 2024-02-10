@@ -93,8 +93,22 @@ const updateOne = async (req, res) => {
   }
 }
 
-const deleteOne = () => {
+const deleteOne = async (req, res) => {
   console.log("Delete One")
+  const userId = new ObjectId(req.params.id)
+  try{
+    const result = await mongodb
+      .getDb()
+      .db(dbName)
+      .collection(dbCollection)
+      .deleteOne({_id: userId})
+    if (result.deletedCount === 0) {
+      return res.status(404).send(`No document deleted wit id: ${userId}`)
+  }
+    res.status(200).send(`Documents deleted: ${result.deletedCount}`)
+  } catch(err){
+    return res.status(400).send(`Delete failed ${err}`)
+  }
 }
 
 module.exports = {
