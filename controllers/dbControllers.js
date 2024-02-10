@@ -38,6 +38,13 @@ const getById = async (req, res) => {
 
 const insertOne = async (req, res) => {
   console.log("Add one")
+  const requiredFields = [
+    "firstName",
+    "lastName",
+    "email",
+    "favoriteColor",
+    "birthday",
+  ]
     
   /* #swagger.parameters['body'] = {
     in: 'body',
@@ -52,6 +59,10 @@ const insertOne = async (req, res) => {
     }
   }
   */
+
+  const hasRequiredFields = requiredFields.every(
+    (field) => req.body[field] !== undefined
+  )
 
   try {
     const result = await mongodb
