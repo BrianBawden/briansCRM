@@ -34,34 +34,62 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "fName": {
                   "type": "string",
-                  "example": "newFirstName"
+                  "example": "Test3"
                 },
-                "lastName": {
+                "lName": {
                   "type": "string",
-                  "example": "newLastName"
+                  "example": "LTest3"
                 },
                 "email": {
                   "type": "string",
-                  "example": "newEmail@email.com"
+                  "example": "test3@ldka.com"
                 },
-                "favoriteColor": {
-                  "type": "string",
-                  "example": "newColor"
+                "phone": {
+                  "type": "object",
+                  "properties": {
+                    "husband": {
+                      "type": "number",
+                      "example": 123456789
+                    },
+                    "wife": {
+                      "type": "number",
+                      "example": 123456789
+                    },
+                    "other": {}
+                  }
                 },
-                "birthday": {
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "streetNum": {
+                      "type": "number",
+                      "example": 1234
+                    },
+                    "streetName": {
+                      "type": "string",
+                      "example": "Abc Street"
+                    },
+                    "city": {
+                      "type": "string",
+                      "example": "Abc Town"
+                    },
+                    "zip": {
+                      "type": "number",
+                      "example": 12345
+                    },
+                    "state": {
+                      "type": "string",
+                      "example": "XX"
+                    }
+                  }
+                },
+                "startDate": {
                   "type": "string",
                   "example": "XX/XX/XXXX"
                 }
-              },
-              "required": [
-                "firstName",
-                "lastName",
-                "email",
-                "favoriteColor",
-                "birthday"
-              ]
+              }
             }
           }
         ],

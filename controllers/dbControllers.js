@@ -48,15 +48,26 @@ const insertOne = async (req, res) => {
     
   /* #swagger.parameters['body'] = {
     in: 'body',
-    description: 'add new contact',
+    description: 'add new customer',
     required: true,
     schema: {
-      $firstName: 'newFirstName', 
-      $lastName: 'newLastName', 
-      $email: 'newEmail@email.com', 
-      $favoriteColor: 'newColor', 
-      $birthday: 'XX/XX/XXXX'
-    }
+    "fName": "Test3",
+    "lName": "LTest3",
+    "email": "test3@ldka.com",
+    "phone": {
+      "husband": 123456789,
+      "wife": 123456789,
+      "other": null
+    },
+    "address": {
+      "streetNum": 1234,
+      "streetName": "Abc Street",
+      "city": "Abc Town",
+      "zip": 12345,
+      "state": "XX"
+    },
+    "startDate": "XX/XX/XXXX"
+  }
   }
   */
 
