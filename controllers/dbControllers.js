@@ -30,6 +30,15 @@ const insertOne = () => {
 const updateOne = async (req, res) => {
   const userId = new ObjectId(req.params.id)
 
+  /* #swagger.parameters['body'] = {
+    in: 'body',
+    description: 'update contact',
+    required: true,
+    schema: {
+    }
+  }
+  */
+
   try {
     const result = await mongodb
       .getDb()
