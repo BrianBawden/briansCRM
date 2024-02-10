@@ -19,8 +19,21 @@ const getAll = async (req, res) => {
   }
 };
 
-const getById = () => {
+const getById = async (req, res) => {
   console.log("Get one.")
+  try{
+    const userId = new ObjectId(req.params.id)
+    const result = await mongodb
+      .getDb()
+      .db(dbName)
+      .collection(dbCollection)
+      .find({_id: userId})
+    result.toArray().then((lists) => {
+      res.json(lists[0])
+    })
+  } catch(err) {
+    return res.status(400).send(`Search for ${userId} faild: ${err}`)
+  }
 }
 
 const insertOne = () => {
