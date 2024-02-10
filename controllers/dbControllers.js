@@ -27,9 +27,24 @@ const insertOne = () => {
   console.log("Add one")
 }
 
-const updateOne = () => {
-  console.log("Update One")
+const updateOne = async (req, res) => {
+  const userId = new ObjectId(req.params.id)
+
+  try {
+    const result = await mongodb
+      .getDb()
+      .db(dbName)
+      .collection(dbCollection)
+      .updateOne({ _id: userId }, {$set: req.body})
+      .then((result) => {
+        res.send(result.insertedId).status(204)
+      })
+  }catch(err){
+    return res.status(400).send(`Update failed: ${err}`)
+  }
 }
+
+
 
 const deleteOne = () => {
   console.log("Delete One")
