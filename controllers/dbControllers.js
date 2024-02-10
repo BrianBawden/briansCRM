@@ -36,8 +36,35 @@ const getById = async (req, res) => {
   }
 }
 
-const insertOne = () => {
+const insertOne = async (req, res) => {
   console.log("Add one")
+    
+  /* #swagger.parameters['body'] = {
+    in: 'body',
+    description: 'add new contact',
+    required: true,
+    schema: {
+      $firstName: 'newFirstName', 
+      $lastName: 'newLastName', 
+      $email: 'newEmail@email.com', 
+      $favoriteColor: 'newColor', 
+      $birthday: 'XX/XX/XXXX'
+    }
+  }
+  */
+
+  try {
+    const result = await mongodb
+      .getDb()
+      .db(dbName)
+      .collection(dbCollection)
+      .insertOne(req.body)
+      .then((result) => {
+        res.send(result.insertedId).status(201)
+      })
+  } catch (err) {
+    return res.status(400).send(`Create new customer faild: ${err``}`)
+  }
 }
 
 const updateOne = async (req, res) => {
@@ -65,8 +92,6 @@ const updateOne = async (req, res) => {
     return res.status(400).send(`Update failed: ${err}`)
   }
 }
-
-
 
 const deleteOne = () => {
   console.log("Delete One")
