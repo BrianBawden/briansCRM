@@ -14,9 +14,9 @@ POST http://localhost:8080/customers/ HTTP/1.1
 Content-Type: application/json
 
 {
-  "firstName": "abcya",
+  "firstName": " asdfa  ",
   "lastName": "testing",
-  "email": "notEmksjdfkjdsail",
+  "email": "notEm@ksjdfkjdsail.com",
   "phone": "blue",
   "address": "fake 44"
 }
