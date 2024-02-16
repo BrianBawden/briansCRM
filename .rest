@@ -1,0 +1,75 @@
+// LocalHost
+
+### getAll
+
+GET http://localhost:8080/customers/
+
+### getById
+
+GET http://localhost:8080/customers/65a9e4729b3c624ca2c691ec
+
+### insertOne
+
+POST http://localhost:8080/customers/ HTTP/1.1
+Content-Type: application/json
+
+{
+  
+  "lastName": "testing",
+  "email": "notEmksjdfkjdsail",
+  "favoriteColor": "blue",
+  "birthday": "fake 44"
+}
+
+###  updateOne
+
+PUT http://localhost:8080/customers/65ae83b04b0bc18462f028d6 HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Star"
+}
+
+### deleteOne
+
+DELETE http://localhost:8080/customers/65ce28103a12d80d8726ee64
+
+
+
+
+
+// Render: https://brianscrm.onrender.com
+
+### getAll
+
+GET https://brianscrm.onrender.com/customers
+
+### getById
+
+GET https://brianscrm.onrender.com/customers/65a9e4729b3c624ca2c691ec
+
+### insertOne
+
+POST https://brianscrm.onrender.com/customers/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Web",
+  "lastName": "Name",
+  "email": "brian@gmail.com",
+  "favoriteColor": "blue",
+  "birthday": "June 1"
+}
+
+### updateOne
+
+PUT https://brianscrm.onrender.com/customers/65b31722e99a20207236093b HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Brenda"
+}
+
+### delete
+
+DELETE https://brianscrm.onrender.com/customers/65b31722e99a20207236093b
