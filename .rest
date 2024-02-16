@@ -17,8 +17,8 @@ Content-Type: application/json
   "firstName": "abcya",
   "lastName": "testing",
   "email": "notEmksjdfkjdsail",
-  "favoriteColor": "blue",
-  "birthday": "fake 44"
+  "phone": "blue",
+  "address": "fake 44"
 }
 
 ###  updateOne
