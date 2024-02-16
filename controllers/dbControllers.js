@@ -110,7 +110,7 @@ const deleteOne = async (req, res) => {
       .collection(dbCollection)
       .deleteOne({_id: userId})
     if (result.deletedCount === 0) {
-      return res.status(404).send(`No document deleted wit id: ${userId}`)
+      return res.status(404).send(`No document deleted with id: ${userId}`)
   }
     res.status(200).send(`Documents deleted: ${result.deletedCount}`)
   } catch(err){
