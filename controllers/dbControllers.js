@@ -48,21 +48,11 @@ const insertOne = async (req, res) => {
     description: 'add new customer',
     required: true,
     schema: {
-    "fName": "Test3",
-    "lName": "LTest3",
+    "firstName": "Test3",
+    "lastName": "LTest3",
     "email": "test3@ldka.com",
-    "phone": {
-      "husband": 123456789,
-      "wife": 123456789,
-      "other": null
-    },
-    "address": {
-      "streetNum": 1234,
-      "streetName": "Abc Street",
-      "city": "Abc Town",
-      "zip": 12345,
-      "state": "XX"
-    },
+    "phone": 123456789,
+    "address": "1234 Abc Street",
     "startDate": "XX/XX/XXXX"
   }
   }

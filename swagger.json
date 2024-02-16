@@ -29,16 +29,16 @@
           {
             "name": "body",
             "in": "body",
-            "description": "add new contact",
+            "description": "add new customer",
             "required": true,
             "schema": {
               "type": "object",
               "properties": {
-                "fName": {
+                "firstName": {
                   "type": "string",
                   "example": "Test3"
                 },
-                "lName": {
+                "lastName": {
                   "type": "string",
                   "example": "LTest3"
                 },
@@ -47,43 +47,12 @@
                   "example": "test3@ldka.com"
                 },
                 "phone": {
-                  "type": "object",
-                  "properties": {
-                    "husband": {
-                      "type": "number",
-                      "example": 123456789
-                    },
-                    "wife": {
-                      "type": "number",
-                      "example": 123456789
-                    },
-                    "other": {}
-                  }
+                  "type": "number",
+                  "example": 123456789
                 },
                 "address": {
-                  "type": "object",
-                  "properties": {
-                    "streetNum": {
-                      "type": "number",
-                      "example": 1234
-                    },
-                    "streetName": {
-                      "type": "string",
-                      "example": "Abc Street"
-                    },
-                    "city": {
-                      "type": "string",
-                      "example": "Abc Town"
-                    },
-                    "zip": {
-                      "type": "number",
-                      "example": 12345
-                    },
-                    "state": {
-                      "type": "string",
-                      "example": "XX"
-                    }
-                  }
+                  "type": "string",
+                  "example": "1234 Abc Street"
                 },
                 "startDate": {
                   "type": "string",
