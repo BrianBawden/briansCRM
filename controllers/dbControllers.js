@@ -103,7 +103,7 @@ const updateOne = async (req, res) => {
       .collection(dbCollection)
       .updateOne({ _id: userId }, {$set: req.body})
       .then((result) => {
-        res.send(result.insertedId).status(204)
+        res.send(`Update to ${userId} complete.`).status(204)
       })
   }catch(err){
     return res.status(400).send(`Update failed: ${err}`)
