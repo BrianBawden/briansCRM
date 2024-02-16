@@ -6,7 +6,7 @@ GET http://localhost:8080/customers/
 
 ### getById
 
-GET http://localhost:8080/customers/65a9e4729b3c624ca2c691ec
+GET http://localhost:8080/customers/65c4427133a4b91e73f0908
 
 ### insertOne
 
@@ -14,7 +14,7 @@ POST http://localhost:8080/customers/ HTTP/1.1
 Content-Type: application/json
 
 {
-  "firstName": " asdfa  ",
+  "firstName": "  dadf ",
   "lastName": "testing",
   "email": "notEm@ksjdfkjdsail.com",
   "phone": "blue",
@@ -32,7 +32,7 @@ Content-Type: application/json
 
 ### deleteOne
 
-DELETE http://localhost:8080/customers/65ce28103a12d80d8726ee64
+DELETE http://localhost:8080/customers/65cf7a8e64630d0451a61ccc
 
 
 

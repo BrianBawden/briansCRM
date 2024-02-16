@@ -20,9 +20,13 @@ const getAll = async (req, res) => {
 };
 
 const getById = async (req, res) => {
-  console.log("Get one.")
+  let userId;
+try {
+  userId = new ObjectId(req.params.id);
+} catch (err) {
+  return res.status(400).send(`Invalid ID format: ${req.params.id}`);
+}
   try{
-    const userId = new ObjectId(req.params.id)
     const result = await mongodb
       .getDb()
       .db(dbName)
@@ -32,19 +36,12 @@ const getById = async (req, res) => {
       res.json(lists[0])
     })
   } catch(err) {
-    return res.status(400).send(`Search for ${userId} faild: ${err}`)
+    return res.status(400).send(`Search for ${userId} failed: ${err}`)
   }
 }
 
 const insertOne = async (req, res) => {
-  console.log("Add one")
-  const requiredFields = [
-    "firstName",
-    "lastName",
-    "email",
-    "favoriteColor",
-    "birthday",
-  ]
+
     
   /* #swagger.parameters['body'] = {
     in: 'body',
@@ -71,9 +68,7 @@ const insertOne = async (req, res) => {
   }
   */
 
-  const hasRequiredFields = requiredFields.every(
-    (field) => req.body[field] !== undefined
-  )
+
 
   try {
     const result = await mongodb
@@ -85,7 +80,7 @@ const insertOne = async (req, res) => {
         res.send(result.insertedId).status(201)
       })
   } catch (err) {
-    return res.status(400).send(`Create new customer faild: ${err``}`)
+    return res.status(400).send(`Create new customer failed: ${err``}`)
   }
 }
 

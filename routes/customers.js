@@ -1,18 +1,18 @@
 const express = require('express')
-const {validatePost, validationPassFail} = require('../validation.js')
+const {validatePost, validationPassFail, validateIds} = require('../validation.js')
 const router = express.Router()
 
 const dbControllers = require("../controllers/dbControllers")
 
 router.get("/", dbControllers.getAll)
 
-router.get("/:id", dbControllers.getById)
+router.get("/:id", validateIds, validationPassFail, dbControllers.getById)
 
 router.post("/", validatePost, validationPassFail, dbControllers.insertOne)
 
-router.put("/:id", dbControllers.updateOne)
+router.put("/:id", validateIds, validationPassFail, dbControllers.updateOne)
 
-router.delete("/:id", dbControllers.deleteOne)
+router.delete("/:id", validateIds, validationPassFail, dbControllers.deleteOne)
 
 
 module.exports = router

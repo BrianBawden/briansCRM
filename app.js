@@ -19,7 +19,7 @@ app
   .use('/', require('./routes'))
 
   process.on('uncaughtException', (err, origin)=>{
-    console.log(process.stderr.fd, `Caught sjdflkjas exception: ${err}/n` + `Exception origin: ${origin}`)
+    console.log(process.stderr.fd, `Caught exception: ${err}/n` + `Exception origin: ${origin}`)
   })
 
   mongodb.initDb((err, mongodb) =>{
