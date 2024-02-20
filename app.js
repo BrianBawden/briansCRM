@@ -30,3 +30,5 @@ app
       console.log(`DB connected at ${port}`)
     }
   })
+
+  app.use(express.static('public'))
