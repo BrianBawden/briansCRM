@@ -6,12 +6,13 @@ const router = express.Router()
 
 app = express();
 
-router.use("/customers", require("./customers"))
+router.use("/", require("./oauth"))
 router.use("/", require("./swagger"))
+router.use("/customers", require("./customers"))
 
-router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/views/login.html"))
-})
+// router.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../public/views/login.html"))
+// })
 
 module.exports = router
 
