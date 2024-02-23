@@ -21,8 +21,8 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 router.get("/", (req, res) => {
-  //res.sendFile(path.join(__dirname, "../public/views/login.html"))
-  res.send('<a href="/auth/google">Authenticate with Google</a>')
+  res.sendFile(path.join(__dirname, "../public/views/login.html"))
+  // res.send('<a href="/auth/google">Authenticate with Google</a>')
 
 })
 
