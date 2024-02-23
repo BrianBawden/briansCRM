@@ -16,11 +16,17 @@ body{
 
 .btn{
   background-color: #000080;
-  color: #fff;
   width: 5rem;
   height: 2rem;
   border-radius: 10px;
   margin-bottom: 1rem;
+}
+
+.link--oauth, .link--oauth:visited, .link--oauth:hover{
+  color: #d8d8eb;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .txt{
