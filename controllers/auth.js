@@ -8,7 +8,7 @@ dotenv.config()
 passport.use(new GoogleStrategy({
     clientID:     process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://brianscrm.onrender.com/api-docs/",  // This the url that google will send a successful log in to.
+    callbackURL: "http://localhost:8080/protected",  // This the url that google will send a successful log in to.
     passReqToCallback   : true
   },
 
