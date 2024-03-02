@@ -4,6 +4,7 @@ const dotenv = require("dotenv")
 
 dotenv.config()
 
+console.log("auth.js is being run.")
 
 passport.use(new GoogleStrategy({
     clientID:     process.env.GOOGLE_CLIENT_ID,
