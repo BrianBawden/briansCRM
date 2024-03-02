@@ -10,7 +10,6 @@ const path = require("path")
 
 dotenv.config()
 
-
 function isLoggedIn(req, res, next){
   req.user ? next() : res.sendStatus(401)
 }
@@ -27,7 +26,7 @@ router.get("/", (req, res) => {
 })
 
 router.get("/auth/google", 
-  passport.authenticate("google", {scope: ["email", "profile"]})  
+  passport.authenticate("google", {scope: ["email", "profile"]}),
 )
 
 router.get("/google/callback",
