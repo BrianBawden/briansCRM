@@ -16,15 +16,15 @@ function isLoggedIn(req, res, next){
   req.user ? next() : res.sendStatus(401)
 }
 
-const app = express()
-app.use(session({ 
-  secret: "cats", 
-  resave: false, 
-  saveUninitialized: true 
-}));
+// const app = express()
+// app.use(session({ 
+//   secret: "cats", 
+//   resave: false, 
+//   saveUninitialized: true 
+// }));
 
-app.use(passport.initialize())
-app.use(passport.session())
+// app.use(passport.initialize())
+// app.use(passport.session())
 
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/views/login.html"))

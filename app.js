@@ -1,8 +1,13 @@
 const express = require('express')
+const session = require("express-session")
+const passport = require("passport")
 const mongodb = require('./db/connect')
 const dotenv = require("dotenv")
 const bodyParser = require('body-parser')
 const cors = require('cors')
+
+require('./controllers/auth')
+
 
 dotenv.config()
 
@@ -10,6 +15,13 @@ const port = process.env.PORT || 3000
 const app = express()
 
 app
+.use(session({ 
+    secret: process.env.SESSION_SECRET, 
+    resave: false, 
+    saveUninitialized: true 
+  }))
+  .use(passport.initialize())
+  .use(passport.session())
   .use(bodyParser.json())
   .use(cors('*'))
   .use((req, res, next) =>{

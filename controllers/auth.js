@@ -6,9 +6,9 @@ dotenv.config()
 
 
 passport.use(new GoogleStrategy({
-    clientID:     process.env.GOOGLE_CLIENT_ID,
+    clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:8080/protected",  // This the url that google will send a successful log in to.
+    callbackURL: "http://localhost:8080/google/callback",  
     passReqToCallback   : true
   },
 
@@ -18,6 +18,7 @@ passport.use(new GoogleStrategy({
   //The accessToken and refreshToken are used interact with the users API you 
   //have access to
   function(request, accessToken, refreshToken, profile, done) {
+    console.log("Google Profile: " , profile)
       return done(null, profile);
   }
 ));
