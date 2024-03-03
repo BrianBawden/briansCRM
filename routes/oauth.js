@@ -1,4 +1,3 @@
-require('../controllers/auth')
 
 const express = require("express")
 const session = require("express-session")
@@ -7,15 +6,23 @@ const dotenv = require("dotenv")
 const router = express.Router()
 const path = require("path")
 
+require('../controllers/auth')
 
 dotenv.config()
 
+
 function isLoggedIn(req, res, next){
+  console.log(req.user)
   req.user ? next() : res.sendStatus(401)
 }
 
 const app = express()
-app.use(session({ secret: process.env.SESSION_SECRET}))
+app.use(session({ 
+  secret: "cats", 
+  resave: false, 
+  saveUninitialized: true 
+}));
+
 app.use(passport.initialize())
 app.use(passport.session())
 
@@ -29,14 +36,15 @@ router.get("/auth/google",
   passport.authenticate("google", {scope: ["email", "profile"]}),
 )
 
-router.get("/google/callback",
+router.get("/google/callback", 
   passport.authenticate("google", {
+    
     successRedirect: "/protected",
     failureRedirect: "/auth/failure",
   })  
 )
 
-router.get("auth/failure", (req, res) => {
+router.get("/auth/failure", (req, res) => {
   res.send("Something went wrong.")
 })
 

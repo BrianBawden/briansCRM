@@ -2,3 +2,4 @@
 node_modules
 customers.json
 employees.json
+.vscode

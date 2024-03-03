@@ -4,7 +4,6 @@ const dotenv = require("dotenv")
 
 dotenv.config()
 
-console.log("auth.js is being run.")
 
 passport.use(new GoogleStrategy({
     clientID:     process.env.GOOGLE_CLIENT_ID,
@@ -23,13 +22,16 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-
 // Save the user's google info to the session to stay logged in
 passport.serializeUser(function(user, done) {
+  console.log("serialize user: ", user)
   done(null, user)
 })
 
 // access the user's google info saved to the session. 
 passport.deserializeUser(function(user, done) {
+  console.log("deserialize user", user)
+
   done(null, user)
 })
+
